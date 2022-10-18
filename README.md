@@ -15,7 +15,7 @@ produces a stream with the elements whose horsepower > 200.
 
 ```java
 words.stream()
-.sorted(Comparator.comparing(Word::getlength).reversed())
+  .sorted(Comparator.comparing(Word::getlength).reversed())
 ```
 produces a stream where the elements are ordered according to their lenghts, with the longest first. Note that we write `Word::getlength`, which is a neat way of providing a function when we want each element to be inserted as indata to the function. In other words is equivalent to writing `s -> Word.getlength(s)`. 
 Also note that we are adding `.reversed()` at the end of the comparator. This is because we want the longest element first in the list, whereas the specified comparator will do the opposite. 
