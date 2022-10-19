@@ -1,6 +1,6 @@
 # Java_Streams
 
-Streams allow us to go through all elements in a collectible, and apply some operations on each element. Writing working functions takes very little time, it kind of reminds me of python programming in that sense. However, in my opinion, it is pretty hard to read the code. When working 
+Streams allow us to go through all elements in a collectible, and apply some operations on each element. Writing working functions takes very little time, it kind of reminds me of python programming in that sense. However, in my opinion, it is pretty hard to read the code. Below are some functions and examples of stream operations.
 
 ## Operations on streams
 ### Filter
