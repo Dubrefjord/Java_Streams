@@ -14,11 +14,19 @@ produces a stream with the elements whose horsepower > 200.
 
 ### ForEach
 
-`forEach(function)`: Takes a stream S and performes the function f on each of the elements E.
+`forEach(function)`: Takes a stream S and performes the function f on each of the elements E. The function may modify the elements.
 
 ```java
  words.stream()
     .forEach(s -> System.out.println(s.getEnglish()+"  "+s.getPrio()));
+```
+
+### Peek
+`peek(function)`: Does not modify the stream at all. The function is used to extract data. For example, we can use it to print values.
+
+```java
+words.stream()
+    .peek(s -> System.out.println(s.getEnglish()+"  "+s.getPrio())) 
 ```
 ### Sorted
 `sorted(comparator)`: Takes a stream S and returns a new stream S' where the elements are sorted according to a comparator.
@@ -39,8 +47,7 @@ words.stream()
 ```
 produces a stream with the integers corresponding to the lengths of the words in the original stream.
 
-### Flatmap
-`flatmap(function)`: 
+We can also use flatmap, which is identical to map, but it also flattens the stream. What this means is that if the map-function returns a stream, the elements of the this stream will be added to the output stream, instead of placing a stream in a stream. Essentially, it makes sure that the outputted stream is not a stream of streams, but instead a stream of elements. 
 
 ### Collect
 `collect(collector)`: Transforms the stream into a collection, like a list. This operation can only be placed at the end of a stream operation (obviously, because after the collect operation we no longer have a stream and thus can't perform any more stream operations).
