@@ -47,7 +47,7 @@ words.stream()
 ```
 produces a stream with the integers corresponding to the lengths of the words in the original stream.
 
-We can also use flatmap, which is identical to map, but it also flattens the stream. What this means is that if the map-function returns a stream, the elements of the this stream will be added to the output stream, instead of placing a stream in a stream. Essentially, it makes sure that the outputted stream is not a stream of streams, but instead a stream of elements. 
+We can also use flatmap, which is identical to map, but it also flattens the stream. What this means is that if the map-function returns a stream, the elements of the this stream will be added to the output stream, instead of placing a stream in a stream. Essentially, it makes sure that the outputted stream is not a stream of streams, but instead a stream of elements. As a consequence, Each E can have many (or zero) E' when we use flatmap (whereas with map there is a one-to-one mapping from E to E'). Using flatmap and returning a stream in the function can be a powerful tool.
 
 ### Collect
 `collect(collector)`: Transforms the stream into a collection, like a list. This operation can only be placed at the end of a stream operation (obviously, because after the collect operation we no longer have a stream and thus can't perform any more stream operations).
